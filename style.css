@@ -1,0 +1,50 @@
+.bright{
+    color: blue;
+    /* make the text centered */
+    text-align: center;
+}
+/* add a shadow to the text */
+.h2{
+    text-shadow: 2px 2px 4px greenyellow;
+}
+/* make the image centered */
+.centered{
+    display:block;
+    margin:auto;
+    /* set the width of the image */
+    width:200px;
+}
+
+main {
+    background-color: lightgray;
+}
+nav ul {
+    /* remove bullet points from list */
+    list-style-type: none;
+    /* display items in a row */
+    display: flex;
+    /* add space between items */
+    justify-content: space-around;
+    /* wrap items to next line if needed */
+    flex-wrap: wrap;
+}
+ nav ul li a{
+    color: red;
+    font-size: 20px;
+    text-decoration: none;
+    /* change font to comic sans */
+    font-family: 'comic sans ms';
+
+    /* add border to the link */
+    border: 1px solid orange;
+    background-color: black;
+    /* add border radius to the link */
+    border-radius: 5px;
+    /* add padding to the link */
+    padding: 5px;
+ }
+/* change the color of the link when hovered */
+ nav ul li a:hover{
+ color:blue;
+ 
+}

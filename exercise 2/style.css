@@ -1,0 +1,19 @@
+.photo {
+  max-width: 500px;
+}
+
+.photo img {
+  width: 500px;
+  height: 400px;
+}
+
+/* 1. make the container class a flex display */
+
+/* 2. make the flex items wrap */
+
+/* 3. align the flex items to be centered.
+Use the justify-content property. */
+
+/* 4. add a margin of 20px for the photo class elements */
+
+

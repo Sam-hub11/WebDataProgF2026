@@ -1,0 +1,33 @@
+.centeredLogo{
+    display:block;
+    margin:auto;
+    /* set the width of the image */
+    width:300px;
+}
+nav ul {
+    /* remove bullet points from list */
+    list-style-type: none;
+    /* display items in a row */
+    display: flex;
+    /* add space between items */
+    justify-content: space-around;
+}
+.logoBack {
+    background-color: #0a1017; 
+    padding: 20px; /* space around the image */
+    text-align: center; /* center the image horizontally */
+}
+ 
+nav ul li a{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+ }
+ 
+nav{
+    display:block;
+    margin:auto;
+    /*how much space around the nav bar*/
+    padding:1ch;
+    background-color: red;
+}
