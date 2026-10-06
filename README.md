@@ -49,6 +49,30 @@ The main goals of this project are to:
 5. Provide useful information for new and experienced collectors.
 6. Encourage smarter and more affordable collecting.
 
+---
+
+## Entity Relationship Diagram (ERD)
+
+![Entity Relationship Diagram](erd.png)
+
+---
+
+## Business Rules
+
+### Relationship 1: USER and COLLECTION_ITEM
+* `<USER>` `<may>` `<own>` `<any number of>` `<COLLECTION_ITEM>`
+* `<COLLECTION_ITEM>` `<must>` `<belong to>` `<exactly one>` `<USER>`
+
+### Relationship 2: DIECAST_MODEL and COLLECTION_ITEM
+* `<DIECAST_MODEL>` `<may>` `<be cataloged as>` `<any number of>` `<COLLECTION_ITEM>`
+* `<COLLECTION_ITEM>` `<must>` `<reference>` `<exactly one>` `<DIECAST_MODEL>`
+
+### Relationship 3: DIECAST_MODEL and PRICE_RECORD
+* `<DIECAST_MODEL>` `<may>` `<have>` `<any number of>` `<PRICE_RECORD>`
+* `<PRICE_RECORD>` `<must>` `<belong to>` `<exactly one>` `<DIECAST_MODEL>`
+
+---
+
 ## Conclusion
 
 Quantum Drift is a project based on my personal interest in Hot Wheels and 1/64 scale diecast collecting. I created it to share my interest in the hobby and create a useful website for other collectors.
