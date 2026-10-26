@@ -57,6 +57,30 @@ The main goals of this project are to:
 
 ---
 
+---
+
+## Relational Schema & Normalization
+
+### What this Diagram Is & Why It Matters
+While the ERD shows the overall concept, this relations diagram shows how the data actually gets stored in database tables. Its purpose is to map out primary keys (PK) and foreign keys (FK) so the tables connect properly without duplicating data.
+
+![Relational Schema](relations.png)
+
+### Relations
+* **USER** (<ins>User_ID</ins>, First_Name, Last_Name, Username, Password, Email)
+* **DIECAST_MODEL** (<ins>Model_ID</ins>, Model_Name, Brand)
+* **COLLECTION_ITEM** (<ins>Collection_Item_ID</ins>, User_ID*, Model_ID*, Purchase_Price)
+* **PRICE_RECORD** (<ins>Record_ID</ins>, Model_ID*, Market_Price)
+
+*(Underlined = Primary Key, `*` = Foreign Key)*
+
+### Normalization Check (1NF, 2NF, 3NF)
+* **1NF:** Yes. Each field holds just one piece of information (like splitting names into first and last), there are no repeating lists in a single cell, and every table has its own unique primary key.
+* **2NF:** Yes. It meets 1NF, and because every table uses a single primary key instead of a combination of keys, none of the attributes only partially depend on a key.
+* **3NF:** Yes. It meets 2NF, and there are no hidden chains where a non-key column depends on another non-key column. Everything points straight back to the primary key.
+
+---
+
 ## Business Rules
 
 ### Relationship 1: USER and COLLECTION_ITEM
