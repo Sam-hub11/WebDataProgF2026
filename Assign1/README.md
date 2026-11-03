@@ -14,10 +14,10 @@ Quantum Drift is built by a collector, for collectors. The goal is to help peopl
 
 The website focuses on:
 
-* **Price Checking** – Helping collectors understand whether a diecast car is worth its current price.
-* **Price Tracking** – Looking at market prices to help collectors decide when to buy or wait.
-* **Quality Inspections** – Looking at details such as paint, wheels, tampos, and casting accuracy.
-* **Smart Collecting** – Providing tips to help collectors build their collections without spending more than necessary.
+- **Price Checking** – Helping collectors understand whether a diecast car is worth its current price.
+- **Price Tracking** – Looking at market prices to help collectors decide when to buy or wait.
+- **Quality Inspections** – Looking at details such as paint, wheels, tampos, and casting accuracy.
+- **Smart Collecting** – Providing tips to help collectors build their collections without spending more than necessary.
 
 ## Why I Created Quantum Drift
 
@@ -31,12 +31,12 @@ Quantum Drift is meant to be a place where collectors can learn, compare, and ma
 
 Quantum Drift is made for:
 
-* Hot Wheels collectors
-* 1/64 diecast collectors
-* New collectors learning about the hobby
-* Collectors interested in premium diecast models
-* People interested in diecast prices and quality
-* Automotive and miniature car enthusiasts
+- Hot Wheels collectors
+- 1/64 diecast collectors
+- New collectors learning about the hobby
+- Collectors interested in premium diecast models
+- People interested in diecast prices and quality
+- Automotive and miniature car enthusiasts
 
 ## Project Goals
 
@@ -57,8 +57,6 @@ The main goals of this project are to:
 
 ---
 
----
-
 ## Relational Schema & Normalization
 
 ### What this Diagram Is & Why It Matters
@@ -67,33 +65,48 @@ While the ERD shows the overall concept, this relations diagram shows how the da
 ![Relational Schema](relations.png)
 
 ### Relations
-* **USER** (<ins>User_ID</ins>, First_Name, Last_Name, Username, Password, Email)
-* **DIECAST_MODEL** (<ins>Model_ID</ins>, Model_Name, Brand)
-* **COLLECTION_ITEM** (<ins>Collection_Item_ID</ins>, User_ID*, Model_ID*, Purchase_Price)
-* **PRICE_RECORD** (<ins>Record_ID</ins>, Model_ID*, Market_Price)
+- **USER** (<ins>User_ID</ins>, First_Name, Last_Name, Username, Password, Email)
+- **DIECAST_MODEL** (<ins>Model_ID</ins>, Model_Name, Brand)
+- **COLLECTION_ITEM** (<ins>Collection_Item_ID</ins>, User_ID*, Model_ID*, Purchase_Price)
+- **PRICE_RECORD** (<ins>Record_ID</ins>, Model_ID*, Market_Price)
 
 *(Underlined = Primary Key, `*` = Foreign Key)*
 
 ### Normalization Check (1NF, 2NF, 3NF)
-* **1NF:** Yes. Each field holds just one piece of information (like splitting names into first and last), there are no repeating lists in a single cell, and every table has its own unique primary key.
-* **2NF:** Yes. It meets 1NF, and because every table uses a single primary key instead of a combination of keys, none of the attributes only partially depend on a key.
-* **3NF:** Yes. It meets 2NF, and there are no hidden chains where a non-key column depends on another non-key column. Everything points straight back to the primary key.
+- **1NF:** Yes. Each field holds just one piece of information (like splitting names into first and last), there are no repeating lists in a single cell, and every table has its own unique primary key.
+- **2NF:** Yes. It meets 1NF, and because every table uses a single primary key instead of a combination of keys, none of the attributes only partially depend on a key.
+- **3NF:** Yes. It meets 2NF, and there are no hidden chains where a non-key column depends on another non-key column. Everything points straight back to the primary key.
 
 ---
 
 ## Business Rules
 
 ### Relationship 1: USER and COLLECTION_ITEM
-* `<USER>` `<may>` `<own>` `<any number of>` `<COLLECTION_ITEM>`
-* `<COLLECTION_ITEM>` `<must>` `<belong to>` `<exactly one>` `<USER>`
+- `<USER>` `<may>` `<own>` `<any number of>` `<COLLECTION_ITEM>`[cite: 1]
+- `<COLLECTION_ITEM>` `<must>` `<belong to>` `<exactly one>` `<USER>`[cite: 1]
 
 ### Relationship 2: DIECAST_MODEL and COLLECTION_ITEM
-* `<DIECAST_MODEL>` `<may>` `<be cataloged as>` `<any number of>` `<COLLECTION_ITEM>`
-* `<COLLECTION_ITEM>` `<must>` `<reference>` `<exactly one>` `<DIECAST_MODEL>`
+- `<DIECAST_MODEL>` `<may>` `<be cataloged as>` `<any number of>` `<COLLECTION_ITEM>`[cite: 1]
+- `<COLLECTION_ITEM>` `<must>` `<reference>` `<exactly one>` `<DIECAST_MODEL>`[cite: 1]
 
 ### Relationship 3: DIECAST_MODEL and PRICE_RECORD
-* `<DIECAST_MODEL>` `<may>` `<have>` `<any number of>` `<PRICE_RECORD>`
-* `<PRICE_RECORD>` `<must>` `<belong to>` `<exactly one>` `<DIECAST_MODEL>`
+- `<DIECAST_MODEL>` `<may>` `<have>` `<any number of>` `<PRICE_RECORD>`[cite: 1]
+- `<PRICE_RECORD>` `<must>` `<belong to>` `<exactly one>` `<DIECAST_MODEL>`[cite: 1]
+
+---
+
+## Database Implementation
+
+- Relational Database Management System: MySQL Community Edition
+- Implemented Tables: USER and COLLECTION_ITEM
+- How the tables are related: USER and COLLECTION_ITEM share a one-to-many relationship linked by the User_ID foreign key in COLLECTION_ITEM. One user can have multiple collection items, and each collection item must belong to a specific user.
+- Schema file link: [schema.sql](schema.sql)
+
+### Table Creation Screenshot
+![Table Creation](screenshots/table_creation.png)
+
+### Created Tables Screenshot
+![Show Tables](screenshots/show_tables.png)
 
 ---
 
