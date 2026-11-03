@@ -53,7 +53,7 @@ The main goals of this project are to:
 
 ## Entity Relationship Diagram (ERD)
 
-![Entity Relationship Diagram](erd.png)
+![Entity Relationship Diagram](Assign1/erd.png)
 
 ---
 
@@ -62,7 +62,7 @@ The main goals of this project are to:
 ### What this Diagram Is & Why It Matters
 While the ERD shows the overall concept, this relations diagram shows how the data actually gets stored in database tables. Its purpose is to map out primary keys (PK) and foreign keys (FK) so the tables connect properly without duplicating data.
 
-![Relational Schema](relations.png)
+![Relational Schema](Assign1/relations.png)
 
 ### Relations
 - **USER** (<ins>User_ID</ins>, First_Name, Last_Name, Username, Password, Email)
