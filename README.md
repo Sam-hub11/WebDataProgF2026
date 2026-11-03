@@ -103,10 +103,10 @@ While the ERD shows the overall concept, this relations diagram shows how the da
 - Schema file link: [schema.sql](schema.sql)
 
 ### Table Creation Screenshot
-![Table Creation](screenshots/table_creation.png)
+![Table Creation](Assign1/screenshots/table_creation.png)
 
 ### Created Tables Screenshot
-![Show Tables](screenshots/show_tables.png)
+![Show Tables](Assign1/screenshots/show_tables.png)
 
 ---
 
