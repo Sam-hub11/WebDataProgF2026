@@ -2,20 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Quantum Drift - Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>  
-        <h1>Welcome Back!</h1>
-        <label for="username"> Username: </label>
-        <input type="text" name="" id="username">
-        <br>
-        <label for="pswd"> Password: </label>
-        <input type="password" name="" id="pswd">
-        <br>
-        <input type="submit" value="Login">
+    <header>
+        <h1>Quantum Drift</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="register.html">Register</a> |
+            <a href="login.html">Login</a> |
+            <a href="diecast.html">Add Car</a>
+        </nav>
+    </header>
 
-    </form>
+    <main>
+        <h2>Collector Login</h2>
+        <form id="loginForm">
+            <div>
+                <label for="loginUsername">Username:</label>
+                <input type="text" id="loginUsername" required>
+            </div>
+            <div>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button type="submit">Log In</button>
+        </form>
+    </main>
+
+    <script src="user.js"></script>
 </body>
 </html>

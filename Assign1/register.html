@@ -2,27 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quantum Drift - Register</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>  
-        <h1>Welcome!!</h1>
-        <label for="fname"> First Name: </label>
-        <input type="text" name="fname" id="fname">
-        <br>
-        <label for="lname"> Last Name: </label>
-        <input type="text" name="lname" id="lname">
-        <br>
-        <label for="username"> Username: </label>
-        <input type="text" name="" id="username">
-        <br>
-        <label for="pswd"> Password: </label>
-        <input type="password" name="" id="pswd">
-        <br>
-        <input type="submit" value="Login">
+    <header>
+        <h1>Quantum Drift</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="register.html">Register</a> |
+            <a href="login.html">Login</a> |
+            <a href="diecast.html">Add Car</a>
+        </nav>
+    </header>
 
-    </form>
+    <main>
+        <h2>Create an Account</h2>
+        <form id="registerForm">
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" required>
+            </div>
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" required>
+            </div>
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </main>
 
+    <script src="user.js"></script>
 </body>
 </html>
