@@ -4,18 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <form>  
-        <h1>Welcome Back!</h1>
-        <label for="username"> Username: </label>
-        <input type="text" name="" id="username">
-        <br>
-        <label for="pswd"> Password: </label>
-        <input type="password" name="" id="pswd">
-        <br>
-        <input type="submit" value="Login">
 
-    </form>
+<body>
+
+    <div class="login-page">
+
+        <!-- LEFT SIDE: LOGIN -->
+        <div class="login-section">
+            <form>
+                <h1>Welcome Back!</h1>
+                <p>Please log in to your account.</p>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username">
+
+                <label for="pswd">Password:</label>
+                <input type="password" id="pswd">
+
+                <input type="submit" value="Login">
+            </form>
+        </div>
+
+        <!-- RIGHT SIDE: IMAGE -->
+        <div class="image-section">
+            <img src="pic1.png" alt="Decorative image">
+        </div>
+
+    </div>
+
 </body>
 </html>
